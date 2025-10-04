@@ -11,15 +11,15 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "AcoFork Blog",
-	subtitle: "技术分享与实践",
+	title: "StarFish Blog",
+	subtitle: "守望先锋源氏大王，unity开发者",
 	description:
-		"分享网络技术、服务器部署、内网穿透、静态网站搭建、CDN优化、容器化部署等技术教程与实践经验的个人技术博客，专注于云原生、无服务器架构和前后端开发，作者为afoim/二叉树树",
+		"守望先锋源氏大王，unity开发者",
 
 	keywords: [],
 	lang: "zh_CN", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
-		hue: 361, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+		hue: 312, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345 (312 = #ff95e9 粉紫色)
 		fixed: true, // Hide the theme color picker for visitors
 		forceDarkMode: true, // Force dark mode and hide theme switcher
 	},
@@ -64,23 +64,18 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Archive,
 		LinkPreset.About,
 		{
-			name: "友链",
-			url: "/friends/", // Internal links should not include the base path, as it is automatically added
-			external: false, // Show an external link icon and will open in a new tab
-		},
-		{
 			name: "赞助",
 			url: "/donate/", // Internal links should not include the base path, as it is automatically added
 			external: false, // Show an external link icon and will open in a new tab
 		},
 		{
 			name: "统计",
-			url: "https://us.umami.is/share/hN3l7PGcxsUCBHfU", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
+			url: "https://us.umami.is/share/MgiJewoeGKwGUnpt/blog.starfishyu.me",
+			external: true,
 		},
 		{
 			name: "状态",
-			url: "https://stats.uptimerobot.com/VAtAH0mzPN", // Internal links should not include the base path, as it is automatically added
+			url: "https://stats.uptimerobot.com/Xaq198M1Ni", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
 		},
 	],
@@ -88,18 +83,23 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=0", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "二叉树树",
-	bio: "Protect What You Love.",
+	name: "星空鱼",
+	bio: "利群大王",
 	links: [
 		{
 			name: "Bilibli",
 			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/325903362",
+			url: "https://space.bilibili.com/389276316",
 		},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/afoim",
+			url: "https://github.com/Yuyuyuxmy",
+		},
+		{
+			name: "抖音",
+			icon: "fa6-brands:tiktok",
+			url: "https://v.douyin.com/lrfd24lWpqA/",
 		},
 	],
 };
@@ -119,7 +119,7 @@ export const imageFallbackConfig: ImageFallbackConfig = {
 export const umamiConfig: UmamiConfig = {
 	enable: true,
 	baseUrl: "https://us.umami.is",
-	shareId: "hN3l7PGcxsUCBHfU",
+	shareId: "MgiJewoeGKwGUnpt",
 	timezone: "Asia/Shanghai",
 };
 

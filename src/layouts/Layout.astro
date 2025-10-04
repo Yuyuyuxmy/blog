@@ -151,8 +151,8 @@ const bannerOffset =
 				}
 			}
 
-			// Load the hue from local storage
-			const hue = localStorage.getItem('hue') || configHue;
+			// Load the hue from local storage or use config value if theme is fixed
+			const hue = (forceDarkMode || !localStorage.getItem('hue')) ? configHue : (localStorage.getItem('hue') || configHue);
 			document.documentElement.style.setProperty('--hue', hue);
 
 			// calculate the --banner-height-extend, which needs to be a multiple of 4 to avoid blurry text
@@ -241,44 +241,8 @@ const bannerOffset =
 		<slot name="head"></slot>
 
 		<link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={`${Astro.site}rss.xml`}/>
-		{/* <!-- Umami分析（自建） -->
-		<script defer src="https://umami.2x.nz/script.js" data-website-id="4b4e430d-a12c-4a5c-8cf9-df48eb20fd6d"></script> */}
-		<!-- Umami分析（云-备用） -->
-		<script defer src="https://cloud.umami.is/script.js" data-website-id="5d710dbd-3a2e-43e3-a553-97b415090c63"></script>
-		<!-- 百度统计 -->
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?b219eaad631b87d273cfe72148b2138b";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-<!-- clarity 分析 -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "t8f0gmcwtx");
-</script>
-<!-- gad -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1683686345039700"
-     crossorigin="anonymous"></script>
-
-		<!-- 谷歌分析 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z4LT4H8KH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9Z4LT4H8KH');
-</script>
-
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "15fe148e91b34f10a15652e1a74ab26c"}'></script><!-- End Cloudflare Web Analytics -->
+		<!-- Umami分析 -->
+		<script defer src="https://us.umami.is/script.js" data-website-id="f2367224-f0da-43d8-824c-e509fee709db"></script>
 	</head>
 	<body class=" min-h-screen transition " class:list={[{"lg:is-home": isHomePage, "enable-banner": enableBanner}]}
 		  data-overlayscrollbars-initialize
@@ -289,63 +253,6 @@ var _hmt = _hmt || [];
 		<!-- increase the page height during page transition to prevent the scrolling animation from jumping -->
 		<div id="page-height-extend" class="hidden h-[300vh]"></div>
 
-		<!-- 域名检测脚本 -->
-		<script is:inline define:vars={{officialSites: ["https://2x.nz"]}}>
-			// 域名检测功能
-			function checkDomain() {
-				try {
-					// 获取当前访问的完整URL
-					const currentUrl = window.location.href;
-					// 获取当前域名
-					const currentDomain = window.location.hostname;
-					
-					// 获取所有官方域名
-					const officialDomains = officialSites.map(site => {
-						try {
-							return new URL(site).hostname;
-						} catch (e) {
-							return null;
-						}
-					}).filter(domain => domain !== null);
-					
-					// 检查当前域名是否为官方域名或本地开发环境
-					const isOfficialDomain = officialDomains.includes(currentDomain);
-					const isLocalDev = currentDomain === 'localhost' || currentDomain === '127.0.0.1';
-					
-					// 如果当前域名不是官方域名且不是本地开发环境
-					if (!isOfficialDomain && !isLocalDev) {
-						// 创建警告弹窗
-						const shouldRedirect = confirm(
-							`⚠️ 域名安全警告\n\n` +
-							`您当前访问的域名：${currentDomain}\n` +
-							`官方域名：${officialDomains.join(', ')}\n\n` +
-							`您可能正在访问非官方网站，存在安全风险！\n\n` +
-							`点击"确定"跳转到官方网站\n` +
-							`点击"取消"继续访问当前网站（不推荐）`
-						);
-						
-						// 如果用户选择跳转到官方网站
-						if (shouldRedirect) {
-							// 构建官方网站的对应页面URL（使用第一个官方网站）
-							const currentPath = window.location.pathname + window.location.search + window.location.hash;
-							const officialPageUrl = officialSites[0] + currentPath;
-							// 跳转到官方网站
-							window.location.href = officialPageUrl;
-						}
-					}
-				} catch (error) {
-					// 如果检测过程中出现错误，静默处理，不影响正常访问
-					console.warn('域名检测失败:', error);
-				}
-			}
-			
-			// 页面加载完成后执行域名检测
-			if (document.readyState === 'loading') {
-				document.addEventListener('DOMContentLoaded', checkDomain);
-			} else {
-				checkDomain();
-			}
-		</script>
 <Analytics />
 	</body>
 </html>

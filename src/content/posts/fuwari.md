@@ -109,7 +109,7 @@ title: Fuwari静态博客搭建教程
        },
        banner: {
          enable: true,
-         src: 'https://eo-r2.2x.nz/myblog/img/222.webp',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+         src: '你的banner图片URL',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
          position: 'center',      // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
          credit: {
            enable: false,         // Display the credit text of the banner image
@@ -145,9 +145,9 @@ title: Fuwari静态博客搭建教程
      }
      
      export const profileConfig: ProfileConfig = {
-       avatar: 'https://eo-r2.2x.nz/myblog/img/111.webp',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-       name: '二叉树树',
-       bio: 'Protect What You Love./爱你所爱！',
+       avatar: 'https://你的头像URL',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+       name: '你的名字',
+       bio: '你的个性签名',
        links: [
          // {
            // name: 'Twitter',
@@ -216,13 +216,13 @@ title: Fuwari静态博客搭建教程
    
    - description：文章描述，正常会显示在文章标题下面
    
-   - image：文章封面图（同目录需要写 `./` 如：`./https://eo-r2.2x.nz/myblog/img/2024-10-14-11-33-28-image.webp`）
+   - image：文章封面图（同目录需要写 `./` 如：`./你的图片路径/封面图.webp`）
    
    - tag：文章标签
    
    - categories：文章分类
 
-5. 我们还需要更改根目录下的 `astro.config.mjs` 。在第34行更改 `stie:` 为你的站点URL，如： `site: "https://onani.cn",`
+5. 我们还需要更改根目录下的 `astro.config.mjs` 。在第34行更改 `stie:` 为你的站点URL，如： `site: "https://你的域名.com",`
 
 6. 欸？有的人就会问了，MarkDown固然好，但是我要如何处理图片的置入呢
 
@@ -232,7 +232,7 @@ title: Fuwari静态博客搭建教程
    
    - ![](../assets/images/2024-10-14-12-54-21-image.webp)
    
-   - 这样，当置入图片时，会往 `https://eo-r2.2x.nz/myblog/img` 文件夹复制一份，然后通过`![1](https://eo-r2.2x.nz/myblog/img/1.webp)`写入MarkDown文件。这样网站就能成功读取到图片啦。而你只需要Ctrl+CV，其他操作MarkText都会自动处理
+   - 这样，当置入图片时，会往你指定的文件夹复制一份，然后通过`![1](你的图片路径/1.webp)`写入MarkDown文件。这样网站就能成功读取到图片啦。而你只需要Ctrl+CV，其他操作MarkText都会自动处理
 
 8. 至此，你已经会用MarkText编写MarkDown语法的博文了
 

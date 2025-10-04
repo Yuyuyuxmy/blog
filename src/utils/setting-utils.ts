@@ -14,6 +14,17 @@ export function getDefaultHue(): number {
 }
 
 export function getHue(): number {
+	// Check if forceDarkMode is enabled from config
+	const configCarrier = document.getElementById("config-carrier");
+	const forceDarkMode = configCarrier?.dataset.forceDarkMode === "true";
+	
+	// If forceDarkMode is enabled, always use config value and clear any stored value
+	if (forceDarkMode) {
+		localStorage.removeItem("hue");
+		return getDefaultHue();
+	}
+	
+	// Otherwise, use stored value or default
 	const stored = localStorage.getItem("hue");
 	return stored ? Number.parseInt(stored) : getDefaultHue();
 }
