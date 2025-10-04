@@ -37,7 +37,7 @@ export const siteConfig: SiteConfig = {
 	},
 	background: {
 		enable: true, // Enable background image
-		src: "https://eopageapi.2x.nz/pic?img=ua", // Background image URL (supports HTTPS)
+		src: "https://img.starfishyu.me/random?type=img&dir=xmy", // Background image URL (supports HTTPS)
 		position: "center", // Background position: 'top', 'center', 'bottom'
 		size: "cover", // Background size: 'cover', 'contain', 'auto'
 		repeat: "no-repeat", // Background repeat: 'no-repeat', 'repeat', 'repeat-x', 'repeat-y'
@@ -51,7 +51,7 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// Leave this array empty to use the default favicon
 		{
-			src: "https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=0", // Path of the favicon, relative to the /public directory
+			src: "https://img.starfishyu.me/file/xmy/1759606591664_微信图片_20251005033526_40_55.jpg", // Path of the favicon, relative to the /public directory
 			//   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
 			//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
 		},
@@ -82,7 +82,7 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=0", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	avatar: "https://img.starfishyu.me/file/xmy/1759606591664_微信图片_20251005033526_40_55.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "星空鱼",
 	bio: "利群大王",
 	links: [
