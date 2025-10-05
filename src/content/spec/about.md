@@ -28,17 +28,12 @@
 - 用途：提供 CDN 服务、安全防护、性能优化
 - 隐私政策：[Cloudflare 隐私政策](https://www.cloudflare.com/privacypolicy/)
 
-**Netlify**
+**Vercel**
 - 可能收集的信息：IP 地址、访问日志、性能数据
 - 用途：网站托管、部署服务
-- 隐私政策：[Netlify 隐私政策](https://www.netlify.com/privacy/)
+- 隐私政策：[Vercel 隐私政策](https://vercel.com/legal/privacy-policy)
 
 ### 分析和统计服务
-
-**Google Analytics（谷歌分析）**
-- 可能收集的信息：匿名化的用户数据、页面浏览量、会话时长、地理位置
-- 用途：网站性能分析、用户行为分析
-- 隐私政策：[Google 隐私政策](https://policies.google.com/privacy)
 
 **Umami 分析**
 - 可能收集的信息：页面浏览量、访问来源、设备类型（匿名化处理）
@@ -90,11 +85,6 @@
 如果您对本隐私政策有任何疑问或关注，请通过以下方式联系我们：
 - 通过网站联系页面
 - 发送邮件至网站管理员
-
-## 滥用与版权举报
-
-如果您发现网站内容存在滥用、侵权或其他违法违规行为,请通过以下方式联系我们:
-- **Telegram**:https://t.me/acofork
 
 我们将认真对待每一个举报,并在收到举报后及时处理相关问题。
 
