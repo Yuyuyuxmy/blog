@@ -69,7 +69,7 @@ export const navBarConfig: NavBarConfig = {
 		},
 		{
 			name: "统计",
-			url: "https://us.umami.is/share/MgiJewoeGKwGUnpt/blog.starfishyu.me",
+			url: "https://cloud.umami.is/share/MgiJewoeGKwGUnpt",
 			external: true,
 		},
 		{

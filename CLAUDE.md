@@ -141,8 +141,8 @@ pinned: boolean (默认 false)
   - Website ID: f2367224-f0da-43d8-824c-e509fee709db
   - Share ID: MgiJewoeGKwGUnpt
   - 时区: Asia/Shanghai
-  - 跟踪脚本: `<script defer src="https://us.umami.is/script.js" data-website-id="..."></script>`
-  - 分享页面: https://us.umami.is/share/MgiJewoeGKwGUnpt/blog.starfishyu.me
+  - 跟踪脚本: `<script defer src="https://cloud.umami.is/script.js" data-website-id="..."></script>`
+  - 分享页面: https://cloud.umami.is/share/MgiJewoeGKwGUnpt
 - **统计缓存**: `/public/js/umami-share.js` (1 小时 TTL)
 
 ### 部署
