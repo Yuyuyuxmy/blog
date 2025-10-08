@@ -8,17 +8,31 @@
       try {
         const parsed = JSON.parse(cached);
         if (Date.now() - parsed.timestamp < cacheTTL) {
+          console.log('[Umami] 使用缓存的分享数据');
           return parsed.value;
         }
-      } catch {
+      } catch (error) {
+        console.warn('[Umami] 清理无效缓存:', error);
         localStorage.removeItem(cacheKey);
       }
     }
-    const res = await fetch(`${baseUrl}/api/share/${shareId}`);
+    
+    const shareUrl = `${baseUrl}/analytics/us/api/share/${shareId}`;
+    console.log('[Umami] 获取分享信息:', shareUrl);
+    
+    const res = await fetch(shareUrl);
     if (!res.ok) {
-      throw new Error('获取 Umami 分享信息失败');
+      const errorText = await res.text();
+      console.error('[Umami] 获取分享信息失败:', {
+        status: res.status,
+        statusText: res.statusText,
+        url: shareUrl,
+        response: errorText
+      });
+      throw new Error(`获取 Umami 分享信息失败: ${res.status} ${res.statusText}`);
     }
     const data = await res.json();
+    console.log('[Umami] 分享信息获取成功:', { websiteId: data.websiteId, tokenLength: data.token?.length });
     localStorage.setItem(cacheKey, JSON.stringify({ timestamp: Date.now(), value: data }));
     return data;
   }
